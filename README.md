@@ -1,2 +1,0 @@
-# practise
-daily practise
