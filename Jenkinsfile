@@ -3,12 +3,12 @@ pipeline {
     agent any
     tools {
         maven 'maven'
-        jdk 'jdk17'
+        jdk 'java-17'
     }
     stages {
         stage('Git-Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'gitHub', url: 'https://github.com/rashmi-murthi/student-crud-minimal.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/rashmi-murthi/student-crud-minimal.git'
             }
         }
         stage('complile'){
