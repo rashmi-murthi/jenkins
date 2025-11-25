@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    stages {
+        stage('Run in Parallel') {
+            parallel {
+                stage('Job A') {
+                    steps {
+                        echo "Running Job A"
+                        sleep 2
+                    }
+                }
+                stage('Job B') {
+                    steps {
+                        echo "Running Job B"
+                        sleep 2
+                    }
+                }
+                stage('Job C') {
+                    steps {
+                        echo "Running Job C"
+                        sleep 2
+                    }
+                }
+            }
+        }
+        stage('Done') {
+            steps {
+                echo "All parallel jobs finished"
+            }
+        }
+    }
+}
